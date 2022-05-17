@@ -7,7 +7,7 @@ const Search = ({ value, handleChange }) => {
     <InputContainer>
       <input
         type="search"
-        placeholder="Search for a user"
+        placeholder="Search"
         value={value}
         onChange={handleChange}
       />

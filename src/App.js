@@ -1,18 +1,26 @@
 import './App.css';
-import './fonts/segoe-ui-4-cufonfonts-webfont/style.css';
+import './resources/fonts/segoe-ui-4-cufonfonts-webfont/style.css';
 
 import CssBaseline from '@mui/material/CssBaseline';
 
-import { Logo } from './components/ui/Logo';
-import Search from './components/ui/Search/Search';
+import Header from './components/Header/Header';
+
+const notifications = [
+  "registration success",
+  "profile updated successfully",
+  "Trasfer successful",
+];
 
 function App() {
+  const searchFieldChange = () => {};
   return (
     <>
       <CssBaseline />
       <div className="App">
-        <Logo />
-        <Search />
+        <Header
+          searchFieldChange={searchFieldChange}
+          notifications={notifications}
+        />
       </div>
     </>
   );
