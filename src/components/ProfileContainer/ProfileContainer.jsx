@@ -23,10 +23,10 @@ function Profile({ user }) {
   return (
     <Box sx={{ display: "flex" }}>
       <Box>
-        <Typography>
+        <Box>
           <Typography>Hello: </Typography>
           <Typography>{user.name}</Typography>
-        </Typography>
+        </Box>
       </Box>
       <Box sx={{ flexGrow: 0 }}>
         <Tooltip title="Open settings">
