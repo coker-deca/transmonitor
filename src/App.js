@@ -2,33 +2,11 @@ import './App.css';
 import './resources/fonts/segoe-ui-4-cufonfonts-webfont/style.css';
 
 import CssBaseline from '@mui/material/CssBaseline';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
 
+import Content from './components/Content/Content';
 import Header from './components/Header/Header';
-
-const theme = createTheme({
-  typography: {
-    // Use the system font instead of the default Roboto font.
-    fontFamily: [
-      "-apple-system",
-      "BlinkMacSystemFont",
-      '"Segoe UI"',
-      "Roboto",
-      '"Helvetica Neue"',
-      "Arial",
-      "sans-serif",
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(","),
-  },
-  palette: {
-    text: {
-      primary: "#262626",
-      secondary: "#647787",
-    },
-  },
-});
+import theme from './constants/themes';
 
 const notifications = [
   "registration success",
@@ -46,6 +24,7 @@ function App() {
           searchFieldChange={searchFieldChange}
           notifications={notifications}
         />
+        <Content />
       </div>
     </ThemeProvider>
   );
