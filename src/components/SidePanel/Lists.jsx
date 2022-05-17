@@ -1,13 +1,14 @@
-import Divider from '@mui/material/Divider';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import Typography from '@mui/material/Typography';
+import ListSubheader from '@mui/material/ListSubheader';
 
 const Lists = ({ list }) => {
   return (
     <>
-      {list.title ? <Typography>{list.title}</Typography> : <Divider />}
+      <ListSubheader sx={{ textAlign: "start" }}>
+        {list.title ? list.title : <br />}
+      </ListSubheader>
       {list.menus.map((item) => {
         const Icon = item.icon;
         return (
