@@ -9,11 +9,21 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
+import userImage from '../../resources/images/Tosin.png';
+import Profile from '../ProfileContainer/ProfileContainer';
 import { Logo } from '../ui/Logo';
+
+const dummyUser = { name: "Jane Doe", image: userImage };
 
 function Header({ searchFieldChange, notifications }) {
   return (
-    <Toolbar sx={{ borderBottom: 1, borderColor: "divider" }}>
+    <Toolbar
+      sx={{
+        borderBottom: 1,
+        borderColor: "divider",
+        justifyContent: "space-between",
+      }}
+    >
       <Logo />
       <TextField
         placeholder="Search"
@@ -57,6 +67,7 @@ function Header({ searchFieldChange, notifications }) {
       <Button variant="outlined" size="small">
         Sign up
       </Button>
+      <Profile user={dummyUser} />
     </Toolbar>
   );
 }
