@@ -73,7 +73,7 @@ const salesData = [
 function Chart() {
   const renderMiniChart = (dataLocale, title, value) => {
     return (
-      <Grid item xs={12} md={2} lg={2}>
+      <Grid item xs={12} md={2} lg={2} sx={{ display: 'flex'}}>
         <Box>
           <Typography>{title}</Typography>
           <Typography fontSize={18}>{value}</Typography>
@@ -86,19 +86,24 @@ function Chart() {
     );
   };
   return (
-    <>
+    <Box sx={{ padding: "30px 0" }}>
       <Typography component="h2" variant="h6" textAlign="start" gutterBottom>
         Today: 5, Aug 2018
       </Typography>
       <Box>
-        <Grid container spacing={4} justifyContent="space-between">
+        <Grid
+          container
+          spacing={4}
+          justifyContent="space-between"
+          sx={{ padding: "20px 0" }}
+        >
           {renderMiniChart(data, "Daily Transaction Value", "₦4,000,000")}
           {renderMiniChart(data, "Daily Transaction Value", "₦4,000,000")}
           {renderMiniChart(data, "Daily Transaction Value", "₦4,000,000")}
           {renderMiniChart(data, "Daily Transaction Value", "₦4,000,000")}
         </Grid>
 
-        <Grid container spacing={2}>
+        <Grid container spacing={2} sx={{padding:"30px 0"}}>
           <Grid item xs={12} md={8} lg={9}>
             <Paper
               sx={{
@@ -139,21 +144,27 @@ function Chart() {
                 <Typography textAlign="start">Orders</Typography>
                 <LinearProgress variant="determinate" value={80} />
                 <Typography textAlign="start">Pending Orders: 20</Typography>
-                <Typography textAlign="start">Reconcilled Orders: 80</Typography>
+                <Typography textAlign="start">
+                  Reconcilled Orders: 80
+                </Typography>
                 <Typography textAlign="start">Total Orders: 100</Typography>
               </Box>
               <Box>
                 <Typography textAlign="start">Payments</Typography>
                 <LinearProgress variant="determinate" value={80} />
-                <Typography textAlign="start">Un-reconcilled Payments: 20</Typography>
-                <Typography textAlign="start">Reconcilled Payments: 80</Typography>
+                <Typography textAlign="start">
+                  Un-reconcilled Payments: 20
+                </Typography>
+                <Typography textAlign="start">
+                  Reconcilled Payments: 80
+                </Typography>
                 <Typography textAlign="start">Total Payments: 100</Typography>
               </Box>
             </Box>
           </Grid>
         </Grid>
       </Box>
-    </>
+    </Box>
   );
 }
 
